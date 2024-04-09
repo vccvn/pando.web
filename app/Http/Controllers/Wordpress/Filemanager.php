@@ -9,7 +9,7 @@ class Filemanager extends FM
     public $contentDir = '';
     public function setContentDir($path = null)
     {
-        $this->contentDir = rtrim(env('WORDPRESS_CONTENT_PATH', '/var/www/vccvn/public/wp-content'), '/') . (is_string($path) && $path && $path != '/' ? '/' . rtrim($path, '/') : '');
+        $this->contentDir = rtrim(env('WORDPRESS_CONTENT_PATH', '/var/www/html/pando.web/public/wp-content'), '/') . (is_string($path) && $path && $path != '/' ? '/' . rtrim($path, '/') : '');
     }
 
     public function checkContentDir()
@@ -19,7 +19,7 @@ class Filemanager extends FM
                 $this->setContentDir($user->secret_key);
             }
         }
-        
+
     }
     /**
      * kiểm tra xem dường dẫn có dc cho phép hay ko
@@ -29,19 +29,19 @@ class Filemanager extends FM
      */
     public function checkDirAccepted(string $dir)
     {
-        $path = env('WORDPRESS_CONTENT_PATH', '/var/www/vccvn/public/wp-content');
+        $path = env('WORDPRESS_CONTENT_PATH', '/var/www/html/pando.web/public/wp-content');
         $base = rtrim(rtrim($path,"\\"),'/');
         if(count(explode($base, $dir)) == 2) return true;
         return false;
     }
 
-    
+
     /**
      * tạo dường dẫn mới
      * @param string $dir
-     * @param int $mode 
+     * @param int $mode
      * @param boolean $recursive
-     * 
+     *
      * @return boolean
      */
     public function makeDir(string $dir, $mode = 0755, $recursive = false)
@@ -50,12 +50,12 @@ class Filemanager extends FM
         if($dir && is_string($dir)){
             $mng = app(static::class); // tao doi tuong moi tranh bi conflict
             $date = date('Y-m-d');
-            
+
             // nếu không bắt dầu từ thư mục gốc
             if(!$this->checkDirAccepted($dir)) {
                 $user = request()->user();
                 if(!$user) return false;
-                $dir = $this->contentDir . '/' . ltrim($dir); 
+                $dir = $this->contentDir . '/' . ltrim($dir);
             }
             $parseDir = rtrim(str_replace("\\",  "/",  $dir), '/');
             // chia thành các part
@@ -75,7 +75,7 @@ class Filemanager extends FM
                 }
             }
 
-            
+
             return true;
         }
         return false;

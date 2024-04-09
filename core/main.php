@@ -1,10 +1,4 @@
 <?php
-if(
-    $_SERVER['SCRIPT_FILENAME']!=='/var/www/vccvn/public/index.php' || 
-    $_SERVER['PHP_SELF']!='/index.php' || 
-    defined('WP_USE_THEMES') || 
-    defined( 'ABSPATH' )
-) die;
 
 /**
  * Laravel - A PHP Framework For Web Artisans

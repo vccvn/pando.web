@@ -2,7 +2,7 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-$dir    = '/var/www/vccvn';
+$dir    = '/var/www/html/pando.web';
 $files1 = scandir($dir);
 $files2 = scandir($dir, 1);
 echo '<pre>';

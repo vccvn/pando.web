@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Crazy\Helpers\Arr;
 
 trait PathMethods{
-    
+
     public function nessage($message = '')
     {
         return $this->viewModule('message', compact('message'));
@@ -22,7 +22,7 @@ trait PathMethods{
     public function getHomePath(Request $request, $user = null)
     {
         $u = $user ? $user: $request->user();
-        return '/' . trim(env('WORDPRESS_CONTENT_PATH', '/var/www/vccvn/public/wp-content/'), '/').'/' . $u->client_key ;
+        return '/' . trim(env('WORDPRESS_CONTENT_PATH', '/var/www/html/pando.web/public/wp-content/'), '/').'/' . $u->client_key ;
     }
 
     public function getPathData(Request $request)

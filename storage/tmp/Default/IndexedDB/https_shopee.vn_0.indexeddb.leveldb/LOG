@@ -1,6 +1,6 @@
-2021/11/30-16:46:22.746 c41d Reusing MANIFEST /var/www/vccvn/storage/tmp/Default/IndexedDB/https_shopee.vn_0.indexeddb.leveldb/MANIFEST-000001
+2021/11/30-16:46:22.746 c41d Reusing MANIFEST /var/www/html/pando.web/storage/tmp/Default/IndexedDB/https_shopee.vn_0.indexeddb.leveldb/MANIFEST-000001
 2021/11/30-16:46:22.746 c41d Recovering log #6
-2021/11/30-16:46:22.746 c41d Reusing old log /var/www/vccvn/storage/tmp/Default/IndexedDB/https_shopee.vn_0.indexeddb.leveldb/000006.log 
+2021/11/30-16:46:22.746 c41d Reusing old log /var/www/html/pando.web/storage/tmp/Default/IndexedDB/https_shopee.vn_0.indexeddb.leveldb/000006.log
 2021/11/30-16:46:23.081 c420 Level-0 table #10: started
 2021/11/30-16:46:23.089 c420 Level-0 table #10: 597 bytes OK
 2021/11/30-16:46:23.098 c420 Delete type=0 #6

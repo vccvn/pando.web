@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 // var server_password = process.env.NODE_SERVER_PASSWORD;
 
-const rootPath = '/var/www/vccvn/';
+const rootPath = '/var/www/html/pando.web/';
 const userPath = '/var/www/home';
 const wpPath = rootPath + 'wp/wp-content';
 const wpAssets = rootPath + 'public/wp-content';

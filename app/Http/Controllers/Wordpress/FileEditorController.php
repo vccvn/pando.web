@@ -38,7 +38,7 @@ class FileEditorController extends ManagerController
         $path = $request->p;
         $rp = ($path ? '/' . ltrim($path, '/') : '');
         if(strpos($path, '..') >= 0 ) return $this->notFound();
-        $fp = rtrim(env('WORDPRESS_CONTENT_PATH', '/var/www/vccvn/public/wp-content/'), '/').'/' . $user->client_key . $rp;
+        $fp = rtrim(env('WORDPRESS_CONTENT_PATH', '/var/www/html/pando.web/public/wp-content/'), '/').'/' . $user->client_key . $rp;
         if(file_exists($fp)){
             if(is_dir($fp)) return $this->viewFolder($fp, $rp, $path);
             return $this->viewFile($fp, $rp, $path);
@@ -66,12 +66,12 @@ class FileEditorController extends ManagerController
             $path = $request->p;
             $rp = ($path ? '/' . ltrim($path, '/') : '');
             if(count(explode('../', $path)) >= 2 ) return $this->notFound();
-            $fp = rtrim(env('WORDPRESS_CONTENT_PATH', '/var/www/vccvn/public/wp-content/'), '/') . '/' . $user->client_key . $rp;
+            $fp = rtrim(env('WORDPRESS_CONTENT_PATH', '/var/www/html/pando.web/public/wp-content/'), '/') . '/' . $user->client_key . $rp;
             $content = $request->content;
             return $this->filemanager->save($fp . '/' .$file, $content)?"success":"false";
         }
         return "false";
-        
+
     }
 
     public function mesage($message = '')
